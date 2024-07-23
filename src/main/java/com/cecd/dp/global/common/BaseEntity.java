@@ -1,4 +1,4 @@
-package com.cecd.dp.global;
+package com.cecd.dp.global.common;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
