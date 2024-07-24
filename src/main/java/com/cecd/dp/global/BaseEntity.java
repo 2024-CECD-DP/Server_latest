@@ -1,4 +1,4 @@
-package com.cecd.dp.global.common;
+package com.cecd.dp.global;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @Getter
-abstract class BaseEntity {
+public abstract class BaseEntity {
 
     @CreatedDate
     private LocalDateTime createdAt;
