@@ -22,7 +22,12 @@ public class QMedia extends EntityPathBase<Media> {
 
     public static final QMedia media = new QMedia("media");
 
+    public final com.cecd.dp.global.QBaseEntity _super = new com.cecd.dp.global.QBaseEntity(this);
+
     public final StringPath caption = createString("caption");
+
+    //inherited
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final StringPath graphMediaId = createString("graphMediaId");
 
@@ -34,11 +39,16 @@ public class QMedia extends EntityPathBase<Media> {
 
     public final NumberPath<Integer> likeCnt = createNumber("likeCnt", Integer.class);
 
-    public final ListPath<com.cecd.dp.domain.mediahashtag.MediaHashTag, com.cecd.dp.domain.mediahashtag.QMediaHashTag> mediaHashTagList = this.<com.cecd.dp.domain.mediahashtag.MediaHashTag, com.cecd.dp.domain.mediahashtag.QMediaHashTag>createList("mediaHashTagList", com.cecd.dp.domain.mediahashtag.MediaHashTag.class, com.cecd.dp.domain.mediahashtag.QMediaHashTag.class, PathInits.DIRECT2);
+    public final ListPath<com.cecd.dp.domain.mediahashtag.entity.MediaHashTag, com.cecd.dp.domain.mediahashtag.entity.QMediaHashTag> mediaHashTagList = this.<com.cecd.dp.domain.mediahashtag.entity.MediaHashTag, com.cecd.dp.domain.mediahashtag.entity.QMediaHashTag>createList("mediaHashTagList", com.cecd.dp.domain.mediahashtag.entity.MediaHashTag.class, com.cecd.dp.domain.mediahashtag.entity.QMediaHashTag.class, PathInits.DIRECT2);
+
+    public final DateTimePath<java.time.LocalDateTime> postedAt = createDateTime("postedAt", java.time.LocalDateTime.class);
 
     public final NumberPath<Integer> replyCnt = createNumber("replyCnt", Integer.class);
 
     public final StringPath type = createString("type");
+
+    //inherited
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QMedia(String variable) {
         this(Media.class, forVariable(variable), INITS);

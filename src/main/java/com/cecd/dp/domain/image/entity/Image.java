@@ -2,8 +2,15 @@ package com.cecd.dp.domain.image.entity;
 
 import com.cecd.dp.domain.media.entity.Media;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
+@Builder
+@NoArgsConstructor @AllArgsConstructor
 public class Image {
 
     @Id

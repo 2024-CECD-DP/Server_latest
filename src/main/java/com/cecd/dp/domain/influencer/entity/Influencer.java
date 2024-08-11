@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.Hibernate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,8 @@ public class Influencer {
     @Column(name = "influencer_id")
     private Long id;
 
-    private String nickname;
-    private String name;
+    private String nickname; // 인스타 별명
+    private String name; // 인스타 이름
     private String category; //  카테고리 종류가 다양해  Non-Enumerated
     private String graphId; // Insta GRAPH API 조회 ID
     private String email;
@@ -43,10 +44,10 @@ public class Influencer {
         this.password = password;
     }
 
-    @OneToMany(mappedBy = "influencer")
+    @OneToMany(mappedBy = "influencer", cascade = CascadeType.ALL)
     List<Media> mediaList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "influencer")
+    @OneToMany(mappedBy = "influencer", cascade = CascadeType.ALL)
     List<Meta> metaList = new ArrayList<>();
 
     //===연관관계 편의 메서드===//
@@ -64,5 +65,14 @@ public class Influencer {
         }
         meta.setInfluencer(this);
         this.metaList.add(meta);
+    }
+
+    //===보조 메서드===//
+    public Meta getLatestMeta() {
+        return metaList.get(metaList.size() - 1);
+    }
+
+    public Integer getMediaCnt() {
+        return mediaList.size();
     }
 }
