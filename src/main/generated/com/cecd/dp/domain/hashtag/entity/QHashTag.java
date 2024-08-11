@@ -22,7 +22,7 @@ public class QHashTag extends EntityPathBase<HashTag> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final ListPath<com.cecd.dp.domain.mediahashtag.MediaHashTag, com.cecd.dp.domain.mediahashtag.QMediaHashTag> mediaHashTagList = this.<com.cecd.dp.domain.mediahashtag.MediaHashTag, com.cecd.dp.domain.mediahashtag.QMediaHashTag>createList("mediaHashTagList", com.cecd.dp.domain.mediahashtag.MediaHashTag.class, com.cecd.dp.domain.mediahashtag.QMediaHashTag.class, PathInits.DIRECT2);
+    public final ListPath<com.cecd.dp.domain.mediahashtag.entity.MediaHashTag, com.cecd.dp.domain.mediahashtag.entity.QMediaHashTag> mediaHashTagList = this.<com.cecd.dp.domain.mediahashtag.entity.MediaHashTag, com.cecd.dp.domain.mediahashtag.entity.QMediaHashTag>createList("mediaHashTagList", com.cecd.dp.domain.mediahashtag.entity.MediaHashTag.class, com.cecd.dp.domain.mediahashtag.entity.QMediaHashTag.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
 

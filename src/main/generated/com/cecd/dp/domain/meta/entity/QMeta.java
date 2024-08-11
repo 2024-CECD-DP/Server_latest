@@ -33,7 +33,7 @@ public class QMeta extends EntityPathBase<Meta> {
 
     public final com.cecd.dp.domain.influencer.entity.QInfluencer influencer;
 
-    public final NumberPath<Integer> mediaAVg = createNumber("mediaAVg", Integer.class);
+    public final NumberPath<Integer> likeAvg = createNumber("likeAvg", Integer.class);
 
     public final NumberPath<Integer> replyAvg = createNumber("replyAvg", Integer.class);
 
